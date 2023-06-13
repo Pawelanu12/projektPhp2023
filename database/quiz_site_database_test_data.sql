@@ -1,9 +1,10 @@
 -- users test data
 
-INSERT INTO users VALUES(1, "administrator", "administrator#pass", 0, 0);
-INSERT INTO users VALUES(11, "pawel", "pawel#pass", 2147, 541);
-INSERT INTO users VALUES(12, "aldona", "aldona#pass", 1300, 400);
-INSERT INTO users VALUES(13, "krzysztof", "krzysztof#pass", 1250, 388);
+INSERT INTO users VALUES(1, "administrator@test-site.pl", "administrator#pass", 0, 0, TRUE, TRUE);
+INSERT INTO users VALUES(11, "pawel@interia.pl", "pawel#pass", 2147, 541, TRUE, TRUE);
+INSERT INTO users VALUES(12, "aldona@gmail.com", "aldona#pass", 1300, 400, FALSE, TRUE);
+INSERT INTO users VALUES(13, "krzysztof@wp.pl", "krzysztof#pass", 1250, 388, FALSE, FALSE);
+INSERT INTO users VALUES(14, "zbigniew@yahoo.com", "zbigniew#pass", 2000, 600, TRUE, FALSE);
 
 
 -- quizes test data

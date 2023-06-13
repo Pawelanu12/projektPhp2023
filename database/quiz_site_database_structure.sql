@@ -2,11 +2,14 @@ CREATE TABLE users
 (
 	user_id INT NOT NULL AUTO_INCREMENT,
 
-	username VARCHAR(16) NOT NULL,
+	email_address VARCHAR(256) NOT NULL,
 	password VARCHAR(32) NOT NULL,
 
 	points_amount INT NOT NULL,
 	quizes_amount INT NOT NULL,
+
+	is_confirmed BOOL NOT NULL,
+	is_active BOOL NOT NULL,
 
 	PRIMARY KEY(user_id)
 );
