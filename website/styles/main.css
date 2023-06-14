@@ -1,0 +1,13 @@
+body
+{
+	text-align: center;
+}
+
+*.sign-in-box
+{
+	margin: 200pt;
+	padding: 20pt;
+
+	color: #000000;
+	background-color: #AAAAAA;
+}
