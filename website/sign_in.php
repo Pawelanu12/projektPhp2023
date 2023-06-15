@@ -10,7 +10,7 @@
 		$signInFormEmail = $_GET["sign-in-email"];
 		$signInFormPassword = $_GET["sign-in-password"];
 
-		$dbSignInQuery = 'SELECT password, is_active FROM users WHERE email_address = "'.$signInFormEmail.'";';
+		$dbSignInQuery = 'SELECT password, is_confirmed, is_active FROM users WHERE email_address = "'.$signInFormEmail.'";';
 				
 		//echo('<h1>'.$dbSignInQuery.'</h1>');
 
@@ -33,16 +33,27 @@
 				{
 					echo('Welcome, '.$signInFormEmail);
 					
-					$userIsActive = $user["is_active"];
-					
-					if($userIsActive)
+					$userIsConfirmed = $user["is_confirmed"];
+
+					if($userIsConfirmed)
 					{
-						echo('Your account is active. Welcome again.');
+						$userIsActive = $user["is_active"];
+					
+						if($userIsActive)
+						{
+							echo('Your account is active. Welcome again.');
+						}
+						else
+						{
+							echo('Your account has been blocked. Please contact with administrator.');
+						}
 					}
 					else
 					{
-						echo('Your account has been blocked. Please contact with administrator.');
+						echo("Your account is not confirmed. Please check your email box.");
 					}
+					
+					
 				}
 				else
 				{

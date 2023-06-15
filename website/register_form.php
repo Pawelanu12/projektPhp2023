@@ -31,6 +31,11 @@
 					<input name="register-confirm-password" type="password" required><br>
 				</label>
 
+				<label>
+					Accept site conditions:
+					<input name="register-conditions-acceptation" type="checkbox" required><br>
+				</label>
+
     			<input name="register-submit" type="submit" value="Register account">
 
 				<p>Have you already account? Please sign in <a href="index.php">here</a></p>
