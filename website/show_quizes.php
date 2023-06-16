@@ -5,7 +5,7 @@
 
 	if($dbConnection)
 	{
-		$dbQuizesListQuery = 'SELECT type_name, name, description FROM quizes, quiz_types WHERE quizes.quiz_type_id = quiz_types.quiz_type_id;';
+		$dbQuizesListQuery = 'SELECT quiz_id, type_name, name, description FROM quizes, quiz_types WHERE quizes.quiz_type_id = quiz_types.quiz_type_id;';
 
 		$dbQuizesListQueryResult = mysqli_query($dbConnection, $dbQuizesListQuery);
 
@@ -16,18 +16,19 @@
 			if($quizesAmount > 0)
 			{
 				echo('<table border="3">');
-				echo('<tr><td>No.</td><td>Quiz type</td><td>Quiz name</td><td>Quiz descryption</td></tr>');
+				echo('<tr><td>No.</td><td>Quiz type</td><td>Quiz name</td><td>Quiz description</td><td></td></tr>');
 				
 				$quizPosition = 0;
 				while($quiz = mysqli_fetch_assoc($dbQuizesListQueryResult))
 				{
 					$quizPosition++;
 
+					$quizId = $quiz["quiz_id"];
 					$quizTypeName = $quiz["type_name"];
 					$quizName = $quiz["name"];
 					$quizDescription = $quiz["description"];
 
-					echo('<tr><td>'.$quizPosition.'</td><td>'.$quizTypeName.'</td><td>'.$quizName.'</td><td>'.$quizDescription.'</td></tr>');
+					echo('<tr><td>'.$quizPosition.'</td><td>'.$quizTypeName.'</td><td>'.$quizName.'</td><td>'.$quizDescription.'</td><td><a href="execute_quiz.php?quiz_id='.$quizId.'">Start</a></td></tr>');
 				}
 				
 				echo('</table>');
