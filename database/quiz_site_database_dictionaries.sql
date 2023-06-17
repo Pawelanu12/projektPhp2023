@@ -1,3 +1,19 @@
+-- removing all dictionary data
+
+DELETE FROM quiz_types;
+DELETE FROM user_roles;
+
+
+-- user roles dictionary data
+
+INSERT INTO user_roles VALUES(1, "Administrator", "Rola administratorów całego web serwisu."); 
+INSERT INTO user_roles VALUES(2, "Redaktor", "Rola redaktorów zarządzających wyglądem i treścią serwisu."); 
+INSERT INTO user_roles VALUES(3, "Edytor", "Rola autorów tworzących i edytujących nowe i istniejące quizy."); 
+
+INSERT INTO user_roles VALUES(10, "Użytkownik zwykły", "Użytkownik z podstawową funkcjonalnością serwisu.");
+INSERT INTO user_roles VALUES(11, "Użytkownik PREMIUM", "Użytkownik z dodatkowymi płatnymi funkcjonalnościami serwisu."); 
+
+
 -- quiz types dictionary data
 
 INSERT INTO quiz_types VALUES(1, "Quiz jednokrotnego wyboru", "Test z tylko i wyłącznie jedną prawidłową odpowiedzią.");

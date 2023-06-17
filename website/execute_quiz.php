@@ -19,6 +19,8 @@
 			$quizDescription = $quizInfo["description"];
 
 			echo('<form action="check_quiz_answers.php" method="GET">');			
+			
+			echo('<input name="quiz-id" type="hidden" value="'.$quizId.'">');
 
 			echo('<h1>'.$quizName.'</h1>');
 			echo('<h2>'.$quizDescription.'</h2>');
@@ -59,7 +61,7 @@
 						$answerContent = $answer["answer_content"];
 						$answerCorrect = $answer["answer_correct"];
 
-						echo('<input name="question'.$questionId.'-answer'.$answerId.'" type="checkbox"> '.$answerContent.'<br>');
+						echo('<input name="answer-id-'.$answerId.'" type="checkbox" value="1"> '.$answerContent.'<br>');
 					}
 				}
 				else
@@ -80,7 +82,7 @@
 		}
 
 		echo('<input name="reset-quiz" type="reset" value="Reset quiz">');
-		echo('<input name="submit-quiz" type="submit" value="Send all answers.">');
+		echo('<input name="submit-quiz" type="submit" value="Check quiz answers">');
 		
 		echo('</form>');
 

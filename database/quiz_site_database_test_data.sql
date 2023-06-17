@@ -1,10 +1,17 @@
+-- removing all data from test data
+
+DELETE FROM quiz_answers;
+DELETE FROM quiz_questions;
+DELETE FROM quizes;
+DELETE FROM users;
+
 -- users test data
 
-INSERT INTO users VALUES(1, "administrator@quiz-site.pl", "administrator#pass", 0, 0, TRUE, TRUE);
-INSERT INTO users VALUES(11, "pawel@interia.pl", "pawel#pass", 2147, 541, TRUE, TRUE);
-INSERT INTO users VALUES(12, "aldona@gmail.com", "aldona#pass", 1300, 400, FALSE, TRUE);
-INSERT INTO users VALUES(13, "krzysztof@wp.pl", "krzysztof#pass", 1250, 388, FALSE, FALSE);
-INSERT INTO users VALUES(14, "zbigniew@yahoo.com", "zbigniew#pass", 2000, 600, TRUE, FALSE);
+INSERT INTO users VALUES(1, 1, "administrator@quiz-site.pl", "administrator#pass", 0, 0, TRUE, TRUE);
+INSERT INTO users VALUES(2, 2, "pawel@interia.pl", "pawel#pass", 2147, 541, TRUE, TRUE);
+INSERT INTO users VALUES(3, 3, "aldona@gmail.com", "aldona#pass", 1300, 400, FALSE, TRUE);
+INSERT INTO users VALUES(10, 10, "krzysztof@wp.pl", "krzysztof#pass", 1250, 388, TRUE, TRUE);
+INSERT INTO users VALUES(11, 11, "zbigniew@yahoo.com", "zbigniew#pass", 2000, 600, TRUE, TRUE);
 
 
 -- quizes test data

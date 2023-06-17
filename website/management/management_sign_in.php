@@ -10,7 +10,7 @@
 		$signInFormEmail = $_GET["sign-in-email"];
 		$signInFormPassword = $_GET["sign-in-password"];
 
-		$dbSignInQuery = 'SELECT email_address, points_amount, quizes_amount, is_confirmed, is_active FROM users;';
+		$dbSignInQuery = 'SELECT user_id, users.user_role_id, role_name, password, is_confirmed, is_active FROM users, user_roles WHERE users.user_role_id = user_roles.user_role_id AND users.user_role_id < 10 AND email_address = "'.$signInFormEmail.'";';
 				
 		//echo('<h1>'.$dbSignInQuery.'</h1>');
 
@@ -37,7 +37,26 @@
 					
 					if($userIsActive)
 					{
-						echo('Your account is active. Welcome again.');
+						$userRoleId = $user["user_role_id"];
+						$userRoleName = $user["role_name"];
+
+						if($userRoleId == 1)
+						{
+							echo('You are '.$userRoleName.'.');
+						}
+						else if($userRoleId == 2)
+						{		
+							echo('You are '.$userRoleName.'.');
+						}
+						else if($userRoleId == 3)
+						{
+							echo('You are '.$userRoleName.'.');
+						}
+						else
+						{
+							echo("ERROR: Uknown role.<br>");
+							echo("<h1>ACCESS DENIED</h1>");
+						}
 					}
 					else
 					{

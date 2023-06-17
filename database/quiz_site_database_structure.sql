@@ -1,6 +1,29 @@
+-- Removing structure of database
+
+DROP TABLE quiz_answers;
+DROP TABLE quiz_questions;
+DROP TABLE quizes;
+DROP TABLE quiz_types;
+DROP TABLE users;
+DROP TABLE user_roles;
+
+-- Creating structure of database
+
+CREATE TABLE user_roles
+(
+	user_role_id INT NOT NULL,
+	
+	role_name VARCHAR(64),
+	role_description VARCHAR(1024),
+	
+	PRIMARY KEY(user_role_id)
+);
+
 CREATE TABLE users
 (
 	user_id INT NOT NULL AUTO_INCREMENT,
+
+	user_role_id INT NOT NULL,
 
 	email_address VARCHAR(256) NOT NULL,
 	password VARCHAR(32) NOT NULL,
