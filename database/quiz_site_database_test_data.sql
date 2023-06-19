@@ -20,6 +20,7 @@ INSERT INTO quizes VALUES(1, 1, 2, "Test wiedzy o samochodach sportowych.", "Tes
 INSERT INTO quizes VALUES(2, 1, 2, "Sprawdzian wiadomości o historii najnowszej.", "Czy wiesz co to był PRL i dlaczego upadł związek radziecki i skąd się wzieła syrenka na polskich drogach?");
 INSERT INTO quizes VALUES(3, 2, 1, "Quiz about English irregular verbs.", "Are you know all irregular verbs forms? Test yourself.");
 INSERT INTO quizes VALUES(4, 2, 2, "Test znajomości angielskich czasowników nieregularnych.", "Czy znasz wszystkie formy nieregularnych czasowników angielskich? Sprawdź siebie.");
+INSERT INTO quizes VALUES(5, 3, 1, "Quiz about English frazes and sentences.", "Find out how correct is your English.");
 
 
 -- quiz questions test data
@@ -37,6 +38,8 @@ INSERT INTO quiz_questions VALUES(7, 3, "Which irregular forms of eat verb are c
 INSERT INTO quiz_questions VALUES(8, 4, "Jakie są poprawne formy czasownika <b>take</b>?");
 INSERT INTO quiz_questions VALUES(9, 4, "Wybierz poprawne formy czasownika <b>break</b>?");
 INSERT INTO quiz_questions VALUES(10, 4, "Zaznacz wszystkie właściwe formy czasownika <b>eat</b>?");
+
+INSERT INTO quiz_questions VALUES(11, 5, "You can't take part in the elections <input name=gap-1 type=text> you are a citizen of Poland.");
 
 
 -- quiz answers test data
@@ -94,3 +97,6 @@ INSERT INTO quiz_answers VALUES(37, 10, "ate", TRUE);
 INSERT INTO quiz_answers VALUES(38, 10, "eight", FALSE);
 INSERT INTO quiz_answers VALUES(39, 10, "eaten", TRUE);
 INSERT INTO quiz_answers VALUES(40, 10, "eat", TRUE);
+
+
+INSERT INTO quiz_answers VALUES(41, 11, "because", TRUE);
