@@ -6,8 +6,20 @@ DROP TABLE quizes;
 DROP TABLE quiz_types;
 DROP TABLE users;
 DROP TABLE user_roles;
+DROP TABLE languages;
 
 -- Creating structure of database
+
+CREATE TABLE languages
+(
+	language_id INT NOT NULL,
+	
+	alfa_2_code CHAR(2) NOT NULL,
+
+	name VARCHAR(32) NOT NULL,
+
+	PRIMARY KEY(language_id)
+);
 
 CREATE TABLE user_roles
 (
@@ -52,6 +64,7 @@ CREATE TABLE quizes
 	quiz_id INT NOT NULL AUTO_INCREMENT,
 
 	quiz_type_id INT NOT NULL,
+	language_id INT NOT NULL,
 
 	name VARCHAR(64) NOT NULL,
 	description VARCHAR(1024),

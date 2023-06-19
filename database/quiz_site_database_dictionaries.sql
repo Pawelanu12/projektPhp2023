@@ -2,6 +2,13 @@
 
 DELETE FROM quiz_types;
 DELETE FROM user_roles;
+DELETE FROM languages;
+
+
+-- languages dictionary data
+
+INSERT INTO languages VALUES(1, "en", "English");
+INSERT INTO languages VALUES(2, "pl", "Polish");
 
 
 -- user roles dictionary data

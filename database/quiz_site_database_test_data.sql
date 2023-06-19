@@ -16,9 +16,10 @@ INSERT INTO users VALUES(11, 11, "zbigniew@yahoo.com", "zbigniew#pass", 2000, 60
 
 -- quizes test data
 
-INSERT INTO quizes VALUES(1, 1, "Test wiedzy o samochodach sportowych.", "Test sprawdza podstawowa wiedzę o samochodach sportowych produkowanych na całym świecie.");
-INSERT INTO quizes VALUES(2, 1, "Sprawdzian wiadomości o historii najnowszej.", "Czy wiesz co to był PRL i dlaczego upadł związek radziecki i skąd się wzieła syrenka na polskich drogach?");
-INSERT INTO quizes VALUES(3, 2, "Quiz about English irregular verbs.", "Are you know all irregular verbs forms? Test yourself.");
+INSERT INTO quizes VALUES(1, 1, 2, "Test wiedzy o samochodach sportowych.", "Test sprawdza podstawowa wiedzę o samochodach sportowych produkowanych na całym świecie.");
+INSERT INTO quizes VALUES(2, 1, 2, "Sprawdzian wiadomości o historii najnowszej.", "Czy wiesz co to był PRL i dlaczego upadł związek radziecki i skąd się wzieła syrenka na polskich drogach?");
+INSERT INTO quizes VALUES(3, 2, 1, "Quiz about English irregular verbs.", "Are you know all irregular verbs forms? Test yourself.");
+INSERT INTO quizes VALUES(4, 2, 2, "Test znajomości angielskich czasowników nieregularnych.", "Czy znasz wszystkie formy nieregularnych czasowników angielskich? Sprawdź siebie.");
 
 
 -- quiz questions test data
@@ -32,6 +33,10 @@ INSERT INTO quiz_questions VALUES(4, 2, "W którym roku upadł związek radzieck
 INSERT INTO quiz_questions VALUES(5, 3, "Which irregular forms of take verb are correct?");
 INSERT INTO quiz_questions VALUES(6, 3, "Which irregular forms of break verb are correct?");
 INSERT INTO quiz_questions VALUES(7, 3, "Which irregular forms of eat verb are correct?");
+
+INSERT INTO quiz_questions VALUES(8, 4, "Jakie są poprawne formy czasownika <b>take</b>?");
+INSERT INTO quiz_questions VALUES(9, 4, "Wybierz poprawne formy czasownika <b>break</b>?");
+INSERT INTO quiz_questions VALUES(10, 4, "Zaznacz wszystkie właściwe formy czasownika <b>eat</b>?");
 
 
 -- quiz answers test data
@@ -73,3 +78,19 @@ INSERT INTO quiz_answers VALUES(25, 7, "ate", TRUE);
 INSERT INTO quiz_answers VALUES(26, 7, "eight", FALSE);
 INSERT INTO quiz_answers VALUES(27, 7, "eaten", TRUE);
 INSERT INTO quiz_answers VALUES(28, 7, "eat", TRUE);
+
+
+INSERT INTO quiz_answers VALUES(29, 8, "took", TRUE);
+INSERT INTO quiz_answers VALUES(30, 8, "token", FALSE);
+INSERT INTO quiz_answers VALUES(31, 8, "take", TRUE);
+INSERT INTO quiz_answers VALUES(32, 8, "taken", TRUE);
+
+INSERT INTO quiz_answers VALUES(33, 9, "braek", FALSE);
+INSERT INTO quiz_answers VALUES(34, 9, "broke", TRUE);
+INSERT INTO quiz_answers VALUES(35, 9, "break", TRUE);
+INSERT INTO quiz_answers VALUES(36, 9, "broken", TRUE);
+
+INSERT INTO quiz_answers VALUES(37, 10, "ate", TRUE);
+INSERT INTO quiz_answers VALUES(38, 10, "eight", FALSE);
+INSERT INTO quiz_answers VALUES(39, 10, "eaten", TRUE);
+INSERT INTO quiz_answers VALUES(40, 10, "eat", TRUE);
