@@ -68,6 +68,9 @@ CREATE TABLE quizes
 
 	name VARCHAR(64) NOT NULL,
 	description VARCHAR(1024),
+
+	created DATETIME NOT NULL,
+	modified DATETIME,
 	
 	PRIMARY KEY(quiz_id)
 );

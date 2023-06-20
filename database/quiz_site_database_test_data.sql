@@ -16,11 +16,11 @@ INSERT INTO users VALUES(11, 11, "zbigniew@yahoo.com", "zbigniew#pass", 2000, 60
 
 -- quizes test data
 
-INSERT INTO quizes VALUES(1, 1, 2, "Test wiedzy o samochodach sportowych.", "Test sprawdza podstawowa wiedzę o samochodach sportowych produkowanych na całym świecie.");
-INSERT INTO quizes VALUES(2, 1, 2, "Sprawdzian wiadomości o historii najnowszej.", "Czy wiesz co to był PRL i dlaczego upadł związek radziecki i skąd się wzieła syrenka na polskich drogach?");
-INSERT INTO quizes VALUES(3, 2, 1, "Quiz about English irregular verbs.", "Are you know all irregular verbs forms? Test yourself.");
-INSERT INTO quizes VALUES(4, 2, 2, "Test znajomości angielskich czasowników nieregularnych.", "Czy znasz wszystkie formy nieregularnych czasowników angielskich? Sprawdź siebie.");
-INSERT INTO quizes VALUES(5, 3, 1, "Quiz about English frazes and sentences.", "Find out how correct is your English.");
+INSERT INTO quizes VALUES(1, 1, 2, "Test wiedzy o samochodach sportowych.", "Test sprawdza podstawowa wiedzę o samochodach sportowych produkowanych na całym świecie.", "2001-02-12 11:11:11", NULL);
+INSERT INTO quizes VALUES(2, 1, 2, "Sprawdzian wiadomości o historii najnowszej.", "Czy wiesz co to był PRL i dlaczego upadł związek radziecki i skąd się wzieła syrenka na polskich drogach?", "2023-03-04 12:34:52", "2023-03-05 00:00:15");
+INSERT INTO quizes VALUES(3, 2, 1, "Quiz about English irregular verbs.", "Are you know all irregular verbs forms? Test yourself.", "2023-06-20 20:48:00", "2023-07-21 11:08:12");
+INSERT INTO quizes VALUES(4, 2, 2, "Test znajomości angielskich czasowników nieregularnych.", "Czy znasz wszystkie formy nieregularnych czasowników angielskich? Sprawdź siebie.", "2022-05-15 23:43:26", "2004-11-30 12:54:01");
+INSERT INTO quizes VALUES(5, 3, 1, "Quiz about English frazes and sentences.", "Find out how correct is your English.", "2023-12-31 12:13:34", "2024-02-28 23:58:59");
 
 
 -- quiz questions test data

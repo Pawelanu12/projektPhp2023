@@ -36,8 +36,8 @@
 					echo('<td>'.$quizName.'</td>');
 					echo('<td>'.$quizDescription.'</td>');
 					
-					echo('<td><a href="change_quiz.php?quiz_id='.$quizId.'">Change</a></td>');
-					echo('<td><a href="remove_quiz.php?quiz_id='.$quizId.'">Remove</a></td>');
+					echo('<td><a href="change_quiz.php?quiz-id='.$quizId.'">Change</a></td>');
+					echo('<td><a href="remove_quiz.php?quiz-id='.$quizId.'">Remove</a></td>');
 					
 					echo('</tr>');
 				}
