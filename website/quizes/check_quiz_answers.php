@@ -5,6 +5,7 @@
 	
 	if($dbConnection)
 	{
+		$userId = $_GET["user-id"];
 		$quizId = $_GET["quiz-id"];
 
 		$quizAnswersQuery = 'SELECT quiz_answer_id, answer_correct FROM quiz_answers WHERE quiz_question_id IN (SELECT quiz_question_id FROM quiz_questions WHERE quiz_id = '.$quizId.');';
@@ -41,7 +42,21 @@
 				}
 			}
 
-			echo('<h1>Your points amount is : '.$quizPointsAmount.' points</h1>');	
+			echo('<h1>Your points amount is : '.$quizPointsAmount.' points</h1>');
+			
+			$dbUpdateUserDataQuery = 'UPDATE users SET points_amount = points_amount + '.$quizPointsAmount.', quizes_amount = quizes_amount + 1 WHERE user_id = 2;';
+			
+			$dbUpdateUserDataQueryResult = mysqli_query($dbConnection, $dbUpdateUserDataQuery);
+
+			if($dbUpdateUserDataQueryResult)
+			{
+				echo('Congratulations! Your points has been added to your account.');
+			}
+			else
+			{
+				echo('ERROR: Sorry! Your points has been NOT added to your account.');
+			}
+
 		}
 		else
 		{

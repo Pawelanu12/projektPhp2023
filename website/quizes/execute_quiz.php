@@ -5,7 +5,8 @@
 
 	if($dbConnection)
 	{
-		$quizId = $_GET["quiz_id"];
+		$userId = $_GET["user-id"];
+		$quizId = $_GET["quiz-id"];
 		
 		$dbSelectedQuizQuery = 'SELECT name, description FROM quizes WHERE quiz_id = '.$quizId.';';
 
@@ -20,6 +21,7 @@
 
 			echo('<form action="check_quiz_answers.php" method="GET">');			
 			
+			echo('<input name="user-id" type="hidden" value="'.$userId.'">');
 			echo('<input name="quiz-id" type="hidden" value="'.$quizId.'">');
 
 			echo('<h1>'.$quizName.'</h1>');

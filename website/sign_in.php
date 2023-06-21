@@ -10,7 +10,7 @@
 		$signInFormEmail = $_GET["sign-in-email"];
 		$signInFormPassword = $_GET["sign-in-password"];
 
-		$dbSignInQuery = 'SELECT password, is_confirmed, is_active FROM users WHERE email_address = "'.$signInFormEmail.'";';
+		$dbSignInQuery = 'SELECT user_id, password, is_confirmed, is_active FROM users WHERE email_address = "'.$signInFormEmail.'";';
 				
 		//echo('<h1>'.$dbSignInQuery.'</h1>');
 
@@ -30,7 +30,23 @@
 				$userValidPassword = $user["password"];
 
 				if($signInFormPassword == $userValidPassword)
-				{
+				{	
+					session_start();
+
+					if(!isset($_COOKIE[$signInFormEmail]))
+					{
+    					setcookie($signInFormEmail, date("H:i:s"));
+					}
+
+					$sessionName = 'startUserSession';
+					$_SESSION[$sessionName] = 'User: '.$signInFormEmail.' has been logged at '. date("Y-m-d H:i:s\n");
+	
+					echo('<h1>'.$_SESSION[$sessionName].'</h1>');
+
+					$logfile = fopen("logs\users_sign_in.log", "a");
+					fwrite($logfile, $_SESSION[$sessionName]);
+					fclose($logfile);
+					
 					echo('Welcome, '.$signInFormEmail);
 					
 					$userIsConfirmed = $user["is_confirmed"];

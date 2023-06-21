@@ -21,26 +21,47 @@
 		if($dbCreateNewQuizQueryResult)
 		{
 			$quizId = mysqli_insert_id($dbConnection);
-			$quizQuestionContent = $_GET["question-content-1"];			
+			
+			$quizQuestionsAmount = $_GET["quiz-questions-amount"];
 
-			$dbQuizQuestionQuery = 'INSERT INTO quiz_questions VALUES(NULL, '.$quizId.', "'.$quizQuestionContent.'");';
-			$dbQuizQuestionQueryResult = mysqli_query($dbConnection, $dbQuizQuestionQuery);
-
-			if($dbQuizQuestionQueryResult)
+			for($questionIndex = 0; $questionIndex < $quizQuestionsAmount; $questionIndex++)
 			{
-				$quizQuestionId = mysqli_insert_id($dbConnection);
+				$quizQuestionContent = $_GET['question-content-'.$questionIndex];			
 
-				$quizAnswerContent = $_GET["answer-content-1-a"];
-				$quizAnswerCorrect = $_GET["answer-correct-1-a"];
+				$dbQuizQuestionQuery = 'INSERT INTO quiz_questions VALUES(NULL, '.$quizId.', "'.$quizQuestionContent.'");';
+				$dbQuizQuestionQueryResult = mysqli_query($dbConnection, $dbQuizQuestionQuery);
+	
+				if($dbQuizQuestionQueryResult)
+				{
+					$quizQuestionId = mysqli_insert_id($dbConnection);
+				
+					$quizCurrentQuestionAnswersAmount = $_GET['quiz-question-'.$questionIndex.'-answers-amount'];
 
-				$dbquizAnswerQuery = 'INSERT INTO quiz_answers VALUES(NULL, '.$quizQuestionId.', "'.$quizAnswerContent.'", '.$quizAnswerCorrect.');';
-				echo("Quiz has been created<br><br>");
+					for($answerIndex = 0; $answerIndex < $quizCurrentQuestionAnswersAmount; $answerIndex++)
+					{
+						$quizAnswerContent = $_GET['answer-content-'.$questionIndex.'-'.$answerIndex];
+						$quizAnswerCorrect = $_GET['answer-correct-'.$questionIndex.'-'.$answerIndex];
+		
+						$dbQuizAnswerQuery = 'INSERT INTO quiz_answers VALUES(NULL, '.$quizQuestionId.', "'.$quizAnswerContent.'", '.$quizAnswerCorrect.');';
+
+						$dbQuizAnswerQueryResult = mysqli_query($dbConnection, $dbQuizAnswerQuery);
+	
+						if($dbQuizAnswerQueryResult)
+						{
+						}
+						else
+						{
+							echo("ERROR: Quiz answer has NOT been added to database.");
+						}
+					}
+				}
+				else
+				{
+					echo("ERROR: Quiz question to quiz about id: $quizId has not been created");
+				}			
 			}
-			else
-			{
-				echo("ERROR: Question to quiz about quiz id: $quizId has not been created");
-			}			
 
+			echo("Quiz has been created<br><br>");
 		}
 		else
 		{

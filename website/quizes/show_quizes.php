@@ -1,6 +1,8 @@
 <?php
 	require('../configuration/database_config.php');
 
+	$userId = $_GET["user-id"];
+
 	$dbConnection = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
 
 	if($dbConnection)
@@ -43,7 +45,7 @@
 					echo('<td>'.$created.'</td>');
 					echo('<td>'.$modified.'</td>');
 					
-					echo('<td><a href="execute_quiz.php?quiz_id='.$quizId.'">Start</a></td>');
+					echo('<td><a href="execute_quiz.php?user-id='.$userId.'&quiz-id='.$quizId.'">Start</a></td>');
 
 					echo('</tr>');
 				}
