@@ -53,6 +53,8 @@
 			echo('ERROR: Query result WASN\'T received from database server.');
 		}
 
+		echo('<br><br><a href="..">Return to main management site</a><br>');
+
 		mysqli_close($dbConnection);
 	}
 	else

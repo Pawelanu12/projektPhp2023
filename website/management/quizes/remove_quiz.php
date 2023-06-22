@@ -14,6 +14,10 @@
 
 		if($dbRemoveQuizQueryResult)
 		{
+			echo('<html><head>');
+			echo('<script src="../../scripts/main.js"></script>');
+			echo('</head><body>');
+
 			echo("Quiz has been removed.");
 		}
 		else
@@ -30,4 +34,5 @@
 		echo("ERROR: Connection to database WASN'T created.");
 	}
 
+	echo('</body></html>');
 ?>

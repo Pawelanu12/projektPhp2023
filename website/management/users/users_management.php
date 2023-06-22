@@ -1,5 +1,5 @@
 <?php
-	require('../configuration/database_config.php');
+	require('../../configuration/database_config.php');
 
 	$dbConnection = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
 
@@ -44,7 +44,9 @@
 		else
 		{
 			echo('ERROR: Query result WASN\'T received.');
-		}		
+		}
+		
+		echo('<br><br><a href="..">Return to main management site</a><br>');		
 
 		mysqli_close($dbConnection);
 	}

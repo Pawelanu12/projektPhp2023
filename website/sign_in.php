@@ -31,6 +31,8 @@
 
 				if($signInFormPassword == $userValidPassword)
 				{	
+					$userId = $user["user_id"];
+
 					session_start();
 
 					if(!isset($_COOKIE[$signInFormEmail]))
@@ -41,13 +43,13 @@
 					$sessionName = 'startUserSession';
 					$_SESSION[$sessionName] = 'User: '.$signInFormEmail.' has been logged at '. date("Y-m-d H:i:s\n");
 	
-					echo('<h1>'.$_SESSION[$sessionName].'</h1>');
+					//echo('<h1>'.$_SESSION[$sessionName].'</h1>');
 
 					$logfile = fopen("logs\users_sign_in.log", "a");
 					fwrite($logfile, $_SESSION[$sessionName]);
 					fclose($logfile);
 					
-					echo('Welcome, '.$signInFormEmail);
+					echo('<h1>Welcome, '.$signInFormEmail.'</h1><br><br>');
 					
 					$userIsConfirmed = $user["is_confirmed"];
 
@@ -57,7 +59,9 @@
 					
 						if($userIsActive)
 						{
-							echo('Your account is active. Welcome again.');
+							//echo('Your account is active. Welcome again.');
+							echo('<br><a href="quizes/show_quizes.php?user-id='.$userId.'">SHOW QUIZES LIST</a><br>');
+							echo('<br><a href="ranking.php?user-id='.$userId.'">SHOW USERS RANKING</a><br>');
 						}
 						else
 						{

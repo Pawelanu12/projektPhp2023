@@ -1,5 +1,5 @@
 <?php
-	require('../configuration/database_config.php');
+	require('../../configuration/database_config.php');
 
 	$dbConnection = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
 

@@ -57,6 +57,8 @@
 				echo('ERROR: Sorry! Your points has been NOT added to your account.');
 			}
 
+			echo('<br><br><a href="show_quizes.php">Return to quizes list</a><br>');
+
 		}
 		else
 		{

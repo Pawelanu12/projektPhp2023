@@ -31,7 +31,10 @@
 
 				if($signInFormPassword == $userValidPassword)
 				{
-					echo('Welcome, '.$signInFormEmail);
+					$userId = $user["user_id"];
+					$userRoleName = $user["role_name"];
+
+					echo('<h1>Welcome, '.$signInFormEmail.'  [ '.$userRoleName.' ]</h1><br><br>');
 					
 					$userIsActive = $user["is_active"];
 					
@@ -42,15 +45,16 @@
 
 						if($userRoleId == 1)
 						{
-							echo('You are '.$userRoleName.'.');
+							echo('<br><a href="users/users_management.php?user-id='.$userId.'">MANAGE USERS</a><br>');
+							echo('<br><a href="quizes/quizes_management.php?user-id='.$userId.'">MANAGE QUIZES</a><br>');
 						}
 						else if($userRoleId == 2)
 						{		
-							echo('You are '.$userRoleName.'.');
+							echo('<br><a href="quizes/quizes_management.php?user-id='.$userId.'">MANAGE QUIZES</a><br>');
 						}
 						else if($userRoleId == 3)
 						{
-							echo('You are '.$userRoleName.'.');
+							echo('<br><a href="quizes/quizes_management.php?user-id='.$userId.'">MANAGE QUIZES</a><br>');
 						}
 						else
 						{

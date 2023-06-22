@@ -12,7 +12,7 @@
 		
 		if($registerFormPassword == $registerFormConfirmPassword)
 		{
-			$dbRegisterUserQuery = 'INSERT INTO users VALUES(NULL, "'.$registerFormEmail.'", "'.$registerFormPassword.'", 0, 0, '.$defaultIsConfirmed.', '.$defaultIsActive.');';
+			$dbRegisterUserQuery = 'INSERT INTO users VALUES(NULL, 10, "'.$registerFormEmail.'", "'.$registerFormPassword.'", 0, 0, '.$defaultIsConfirmed.', '.$defaultIsActive.');';
 
 			$dbRegisterUserQueryResult = mysqli_query($dbConnection, $dbRegisterUserQuery);
 
